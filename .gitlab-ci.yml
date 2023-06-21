@@ -1,0 +1,16 @@
+include:
+  - project: 1howardcapital/application/cicd
+    ref: main
+    file:
+      - package.yml
+  - project: 1howardcapital/application/cicd
+    ref: main
+    file:
+      - deploy.yml
+
+variables:
+  SERVICE_NAME    : api
+  GITLAB_PREFIX   : $CI_PROJECT_PATH
+  VERSION_MAJOR   : "0"
+  VERSION_MINOR   : "0"
+  INDEX_URL       : https://__token__:$GITLAB_SUPPORT_TOKEN@gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/pypi/simple
